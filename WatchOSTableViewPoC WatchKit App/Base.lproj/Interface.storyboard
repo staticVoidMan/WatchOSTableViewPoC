@@ -28,8 +28,15 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" title="Add New Note" id="95P-fX-TYr">
+                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="btnAddNewNoteAction:" destination="AgC-eL-Hgc" id="IMK-Hx-PGb"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
+                        <outlet property="btnAddNewNote" destination="95P-fX-TYr" id="zvr-po-JeY"/>
                         <outlet property="notesTable" destination="K6F-FU-CN9" id="juK-gq-xth"/>
                     </connections>
                 </controller>

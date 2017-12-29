@@ -15,6 +15,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var notesTable: WKInterfaceTable!
     var notes = [String]()
     
+    @IBOutlet var btnAddNewNote: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -53,6 +55,19 @@ class InterfaceController: WKInterfaceController {
                 return
         }
         row.lblNote.setText(note)
+    }
+    
+    //MARK: -
+    @IBAction func btnAddNewNoteAction(_ sender: WKInterfaceButton) {
+        let newNote = "Random Note ID: \(arc4random())"
+        notes.append(newNote)
+        
+        let index = notes.count - 1
+        
+        notesTable.insertRows(at: IndexSet(integer: index),
+                              withRowType: "NoteCell")
+        showNote(notes[index],
+                 at: index)
     }
 
 }
