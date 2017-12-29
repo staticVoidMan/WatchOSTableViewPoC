@@ -19,18 +19,8 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-        notes.append("First Note")
-        notes.append("Second Note")
-        
-        notesTable.setNumberOfRows(notes.count, withRowType: "NoteCell")
-        
-        for rowIndex in 0..<notes.count {
-            guard let row = notesTable.rowController(at: rowIndex) as? NoteCell
-                else {
-                continue
-            }
-            row.lblNote.setText(notes[rowIndex])
-        }
+        createDatasource()
+        loadDatasource()
     }
     
     override func willActivate() {
@@ -41,6 +31,28 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    //MARK: -
+    func createDatasource() {
+        notes.append("First Note")
+        notes.append("Second Note")
+    }
+    
+    func loadDatasource() {
+        notesTable.setNumberOfRows(notes.count, withRowType: "NoteCell")
+        
+        for rowIndex in 0..<notes.count {
+            showNote(notes[rowIndex], at: rowIndex)
+        }
+    }
+    
+    func showNote(_ note: String, at rowIndex: Int) {
+        guard let row = notesTable.rowController(at: rowIndex) as? NoteCell
+            else {
+                return
+        }
+        row.lblNote.setText(note)
     }
 
 }
