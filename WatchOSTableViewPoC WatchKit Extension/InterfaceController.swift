@@ -69,5 +69,14 @@ class InterfaceController: WKInterfaceController {
         showNote(notes[index],
                  at: index)
     }
+    
+    //MARK: -
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        if segueIdentifier == "segueNoteViewIC" {
+            return notes[rowIndex]
+        }
+        
+        return nil
+    }
 
 }

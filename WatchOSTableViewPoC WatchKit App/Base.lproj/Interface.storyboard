@@ -9,6 +9,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
     <scenes>
+        <!--Note ViewIC-->
+        <scene sceneID="QVh-ly-u20">
+            <objects>
+                <controller id="dXU-ti-cxz" customClass="NoteViewIC" customModule="WatchOSTableViewPoC_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="SOg-2o-Xz2"/>
+                    </items>
+                    <connections>
+                        <outlet property="lblNote" destination="SOg-2o-Xz2" id="YLW-oC-mlr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="304" y="85"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
@@ -21,6 +35,9 @@
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="AIM-Ql-cdc"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="dXU-ti-cxz" kind="push" identifier="segueNoteViewIC" id="oYG-Ob-G7H"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="lblNote" destination="AIM-Ql-cdc" id="dbt-qW-rre"/>
