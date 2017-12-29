@@ -13,19 +13,23 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var notesTable: WKInterfaceTable!
+    var notes = [String]()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-        notesTable.setNumberOfRows(10, withRowType: "NoteCell")
+        notes.append("First Note")
+        notes.append("Second Note")
         
-        for rowIndex in 0..<10 {
+        notesTable.setNumberOfRows(notes.count, withRowType: "NoteCell")
+        
+        for rowIndex in 0..<notes.count {
             guard let row = notesTable.rowController(at: rowIndex) as? NoteCell
                 else {
                 continue
             }
-            row.lblNote.setText("Note \(rowIndex + 1)")
+            row.lblNote.setText(notes[rowIndex])
         }
     }
     
