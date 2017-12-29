@@ -18,7 +18,9 @@ class NoteViewIC: WKInterfaceController {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-        lblNote.setText(context as? String)
+        let (note, index) = context as! (String, Int)
+        self.setTitle("Note \(index + 1)")
+        lblNote.setText(note)
     }
 
     override func willActivate() {

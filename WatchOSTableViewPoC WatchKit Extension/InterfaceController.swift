@@ -73,7 +73,7 @@ class InterfaceController: WKInterfaceController {
     //MARK: -
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         if segueIdentifier == "segueNoteViewIC" {
-            return notes[rowIndex]
+            return (note: notes[rowIndex], index: rowIndex)
         }
         
         return nil
