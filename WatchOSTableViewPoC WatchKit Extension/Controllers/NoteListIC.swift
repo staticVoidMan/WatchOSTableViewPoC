@@ -15,7 +15,11 @@ class NoteListIC: WKInterfaceController {
     @IBOutlet var notesTable: WKInterfaceTable!
     var notes = [String]()
     
-    var notesFile = NoteListIC.getDocumentsDirectory().appendingPathComponent("notes").path
+    var notesFile: String {
+        get {
+            return NoteListIC.getDocumentsDirectory().appendingPathComponent("notes").path
+        }
+    }
     
     @IBOutlet var btnAddNewNote: WKInterfaceButton!
     
