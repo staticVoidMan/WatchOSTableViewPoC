@@ -1,5 +1,5 @@
 //
-//  NoteViewIC.swift
+//  NoteDetailIC.swift
 //  WatchOSTableViewPoC WatchKit Extension
 //
 //  Created by Amin Siddiqui on 29/12/17.
@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class NoteViewIC: WKInterfaceController {
+class NoteDetailIC: WKInterfaceController {
 
     @IBOutlet var lblNote: WKInterfaceLabel!
     

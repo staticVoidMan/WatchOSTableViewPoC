@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
     <scenes>
-        <!--Note ViewIC-->
+        <!--Note DetailIC-->
         <scene sceneID="QVh-ly-u20">
             <objects>
-                <controller id="dXU-ti-cxz" customClass="NoteViewIC" customModule="WatchOSTableViewPoC_WatchKit_Extension">
+                <controller id="dXU-ti-cxz" customClass="NoteDetailIC" customModule="WatchOSTableViewPoC_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Label" numberOfLines="0" id="SOg-2o-Xz2"/>
                     </items>
@@ -23,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="304" y="85"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Note ListIC-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchOSTableViewPoC_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="NoteListIC" customModule="WatchOSTableViewPoC_WatchKit_App" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="K6F-FU-CN9">
                             <items>
