@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
@@ -24,7 +28,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="NoteListIC" customModule="WatchOSTableViewPoC_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <table alignment="left" id="K6F-FU-CN9">
+                        <table alignment="left" pagingScroll="YES" id="K6F-FU-CN9">
                             <items>
                                 <tableRow identifier="NoteCell" id="o5c-WS-9Bs" customClass="NoteCell" customModule="WatchOSTableViewPoC_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="AGP-tk-bbp">
@@ -47,9 +51,27 @@
                                 <action selector="btnAddNewNoteAction:" destination="AgC-eL-Hgc" id="IMK-Hx-PGb"/>
                             </connections>
                         </button>
+                        <group width="1" alignment="left" id="mZd-3C-LdS">
+                            <items>
+                                <button width="0.5" alignment="left" title="Load" id="uVV-ao-b2X">
+                                    <color key="backgroundColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="btnLoadSavedNotesAction:" destination="AgC-eL-Hgc" id="g2J-5p-Mhz"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Save" id="9pk-4F-4e3">
+                                    <color key="backgroundColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="btnSaveNotesAction:" destination="AgC-eL-Hgc" id="Uz8-yO-Uoz"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="btnAddNewNote" destination="95P-fX-TYr" id="zvr-po-JeY"/>
+                        <outlet property="btnLoadSavedNotes" destination="uVV-ao-b2X" id="Hph-LY-bpQ"/>
+                        <outlet property="btnSaveNotes" destination="9pk-4F-4e3" id="8pM-d4-OzX"/>
                         <outlet property="notesTable" destination="K6F-FU-CN9" id="juK-gq-xth"/>
                     </connections>
                 </controller>

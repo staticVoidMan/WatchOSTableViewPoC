@@ -15,14 +15,17 @@ class NoteListIC: WKInterfaceController {
     @IBOutlet var notesTable: WKInterfaceTable!
     var notes = [String]()
     
+    var notesFile = NoteListIC.getDocumentsDirectory().appendingPathComponent("notes").path
+    
     @IBOutlet var btnAddNewNote: WKInterfaceButton!
+    
+    @IBOutlet var btnSaveNotes: WKInterfaceButton!
+    @IBOutlet var btnLoadSavedNotes: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-        createDatasource()
-        loadDatasource()
     }
     
     override func willActivate() {
@@ -36,11 +39,6 @@ class NoteListIC: WKInterfaceController {
     }
     
     //MARK: -
-    func createDatasource() {
-        notes.append("First Note")
-        notes.append("Second Note")
-    }
-    
     func loadDatasource() {
         notesTable.setNumberOfRows(notes.count, withRowType: "NoteCell")
         
@@ -70,6 +68,14 @@ class NoteListIC: WKInterfaceController {
                  at: index)
     }
     
+    @IBAction func btnSaveNotesAction(_ sender: WKInterfaceButton) {
+        saveNotes()
+    }
+    
+    @IBAction func btnLoadSavedNotesAction(_ sender: WKInterfaceButton) {
+        loadNotes()
+    }
+    
     //MARK: -
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         if segueIdentifier == "segueNoteViewIC" {
@@ -77,6 +83,25 @@ class NoteListIC: WKInterfaceController {
         }
         
         return nil
+    }
+    
+    //MARK: -
+    static func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory,
+                                             in: FileManager.SearchPathDomainMask.userDomainMask)
+        return paths[0]
+    }
+    
+    func saveNotes() {
+        NSKeyedArchiver.archiveRootObject(notes, toFile: notesFile)
+    }
+    
+    func loadNotes() {
+        if let savedNotes = NSKeyedUnarchiver.unarchiveObject(withFile: notesFile) as? [String] {
+            notes = savedNotes
+        }
+        
+        loadDatasource()
     }
 
 }
