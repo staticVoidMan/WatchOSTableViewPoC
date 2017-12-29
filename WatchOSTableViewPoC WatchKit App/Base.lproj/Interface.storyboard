@@ -16,12 +16,15 @@
                     <items>
                         <table alignment="left" id="K6F-FU-CN9">
                             <items>
-                                <tableRow identifier="NoteCell" id="o5c-WS-9Bs">
+                                <tableRow identifier="NoteCell" id="o5c-WS-9Bs" customClass="NoteCell" customModule="WatchOSTableViewPoC_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="AGP-tk-bbp">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="AIM-Ql-cdc"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="lblNote" destination="AIM-Ql-cdc" id="dbt-qW-rre"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

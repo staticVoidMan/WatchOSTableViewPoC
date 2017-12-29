@@ -19,6 +19,14 @@ class InterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
         notesTable.setNumberOfRows(10, withRowType: "NoteCell")
+        
+        for rowIndex in 0..<10 {
+            guard let row = notesTable.rowController(at: rowIndex) as? NoteCell
+                else {
+                continue
+            }
+            row.lblNote.setText("Note \(rowIndex + 1)")
+        }
     }
     
     override func willActivate() {

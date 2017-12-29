@@ -19,6 +19,7 @@
 		90343B801FF61713002B96A9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90343B7F1FF61713002B96A9 /* InterfaceController.swift */; };
 		90343B821FF61713002B96A9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90343B811FF61713002B96A9 /* ExtensionDelegate.swift */; };
 		90343B841FF61713002B96A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90343B831FF61713002B96A9 /* Assets.xcassets */; };
+		90343B961FF61F30002B96A9 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90343B951FF61F30002B96A9 /* NoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		90343B811FF61713002B96A9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		90343B831FF61713002B96A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90343B851FF61713002B96A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90343B951FF61F30002B96A9 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				90343B811FF61713002B96A9 /* ExtensionDelegate.swift */,
 				90343B831FF61713002B96A9 /* Assets.xcassets */,
 				90343B851FF61713002B96A9 /* Info.plist */,
+				90343B951FF61F30002B96A9 /* NoteCell.swift */,
 			);
 			path = "WatchOSTableViewPoC WatchKit Extension";
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90343B961FF61F30002B96A9 /* NoteCell.swift in Sources */,
 				90343B821FF61713002B96A9 /* ExtensionDelegate.swift in Sources */,
 				90343B801FF61713002B96A9 /* InterfaceController.swift in Sources */,
 			);
